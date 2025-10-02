@@ -1,6 +1,0 @@
-;/*FB_PKG_DELIM*/
-
-__d("CAAIGAccountSearchViewContentQuery_facebookRelayOperation",[],(function(a,b,c,d,e,f){e.exports="30326995430281488"}),null);
-__d("CAAIGAccountSearchViewContentQuery$Parameters",["CAAIGAccountSearchViewContentQuery_facebookRelayOperation"],(function(a,b,c,d,e,f){"use strict";a={kind:"PreloadableConcreteRequest",params:{id:b("CAAIGAccountSearchViewContentQuery_facebookRelayOperation"),metadata:{},name:"CAAIGAccountSearchViewContentQuery",operationKind:"query",text:null}};e.exports=a}),null);
-__d("CAARegistrationFormDesktopQuery_facebookRelayOperation",[],(function(a,b,c,d,e,f){e.exports="24256125354089113"}),null);
-__d("CAARegistrationFormDesktopQuery$Parameters",["CAARegistrationFormDesktopQuery_facebookRelayOperation"],(function(a,b,c,d,e,f){"use strict";a={kind:"PreloadableConcreteRequest",params:{id:b("CAARegistrationFormDesktopQuery_facebookRelayOperation"),metadata:{},name:"CAARegistrationFormDesktopQuery",operationKind:"query",text:null}};e.exports=a}),null);
