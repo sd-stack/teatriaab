@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shfaqjet - Teatri AAB</title>
+  <link href="../src/output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+    .font-italiana { font-family: 'Playfair Display', serif; }
+    .show-card { transition: all 0.3s ease; }
+    .show-card:hover { transform: translateY(-8px); }
+    .hero-gradient { background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); }
+    .hidden-show { display: none !important; }
+  </style>
+</head>
+<body class="bg-gray-50 font-inter">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-md text-red-600 flex items-center px-6 md:px-8 py-4 relative w-full">
+        
+        <a href="index.html" class="logo flex items-center space-x-2">
+        <img src="./assets/logoteatri.png" alt="Site Logo" class="w-24 h-auto block">
+        </a>
+
+        <div class="flex-1 flex justify-center">
+        <ul id="navLinks" class="hidden md:flex items-center gap-8">
+            <li><a href="./index.html" class="text-gray-700 hover:text-red-600 transition duration-300 font-medium">Home</a></li>
+            <li><a href="./rreth-nesh.html" class="text-gray-700 hover:text-red-600 transition duration-300 font-medium">Shfaqjet</a></li>
+            <li><a href="./shfaqjet.html" class="text-red-600 font-semibold border-b-2 border-red-600 pb-1">Shfaqjet</a></li>
+            <li><a href="./galeria.html" class="text-gray-700 hover:text-red-600 transition duration-300 font-medium">Galeria</a></li>
+            <li><a href="./lajmet.html" class="text-gray-700 hover:text-red-600 transition duration-300 font-medium">Lajmet</a></li>
+            <li><a href="./kontakt.html" class="text-gray-700 hover:text-red-600 transition duration-300 font-medium">Kontakt</a></li>
+        </ul>
+        </div>
+
+        <div class="flex items-center gap-4">
+        <button class="hidden md:inline bg-gradient-to-br from-red-600 to-red-500 text-white px-5 py-2.5 rounded-lg cursor-pointer font-medium shadow-md hover:from-red-700 hover:to-red-600 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
+            Rezervo
+        </button>
+
+        <div id="menuToggle" class="md:hidden text-red-600 text-2xl cursor-pointer">
+            ☰
+        </div>
+        </div>
+    </nav>
+
+    <div id="mobileMenu" class="hidden md:hidden flex-col bg-white shadow-lg absolute top-16 right-0 w-56 p-4 rounded-lg space-y-3 z-10">
+        <a href="./index.html" class="text-gray-700 hover:text-red-600 py-2 transition">Home</a>
+        <a href="./rreth-nesh.html" class="text-red-600 font-medium py-2">Rreth nesh</a>
+        <a href="./shfaqjet.html" class="text-gray-700 hover:text-red-600 py-2 transition">Shfaqjet</a>
+        <a href="./galeria.html" class="text-gray-700 hover:text-red-600 py-2 transition">Galeria</a>
+        <a href="./lajmet.html" class="text-gray-700 hover:text-red-600 py-2 transition">Lajmet</a>
+        <a href="./kontakt.html" class="text-gray-700 hover:text-red-600 py-2 transition">Kontakt</a>
+        <button class="bg-gradient-to-br from-red-600 to-red-500 text-white px-5 py-2.5 rounded-lg cursor-pointer font-medium shadow-md hover:from-red-700 hover:to-red-600 transition-all duration-300 mt-2 w-full">
+        Rezervo
+        </button>
+    </div>
+    <!-- END OF NAVBAR  -->
+
+    <section class="hero-gradient text-white py-20 text-center">
+        <h1 class="font-italiana text-5xl font-bold mb-4">Shfaqjet Tona</h1>
+        <p class="text-xl text-gray-300">Eksploroni programin tonë për sezonin aktual</p>
+    </section>
+
+    <section class="bg-white py-8 border-b">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+
+        <div class="flex flex-wrap gap-3 justify-center">
+            <button class="filter-btn bg-red-600 text-white px-4 py-2 rounded-full font-medium" data-filter="all">Të Gjitha</button>
+            <button class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-full" data-filter="sot">Sot</button>
+            <button class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-full" data-filter="neser">Nesër</button>
+            <button class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-full" data-filter="kete-jave">Këtë Javë</button>
+            <button class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-full" data-filter="kete-muaj">Këtë Muaj</button>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <label for="monthFilter" class="text-gray-600 font-medium">Filtro sipas muajit:</label>
+            <select id="monthFilter" class="px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500">
+            <option value="all">Të Gjitha</option>
+            <option value="janar">Janar</option>
+            <option value="shkurt">Shkurt</option>
+            <option value="mars">Mars</option>
+            <option value="prill">Prill</option>
+            <option value="maj">Maj</option>
+            <option value="qershor">Qershor</option>
+            <option value="korrik">Korrik</option>
+            <option value="gusht">Gusht</option>
+            <option value="shtator">Shtator</option>
+            <option value="tetor">Tetor</option>
+            <option value="nentor">Nëntor</option>
+            <option value="dhjetor">Dhjetor</option>
+            </select>
+        </div>
+
+        <div class="relative">
+            <input type="text" id="searchInput" placeholder="Kërko shfaqje..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-red-500">
+            <svg class="w-5 h-5 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"/>
+            </svg>
+        </div>
+        </div>
+    </section>
+
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="showsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="./single-post.html" class="show-item bg-white rounded-xl shadow-lg overflow-hidden show-card" data-date="sot" data-month="janar">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1546484475-7f7bd55792da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1001&q=80" 
+                             alt="Hamleti" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Sot - 20:00
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Hamleti</h3>
+                        <p class="text-gray-600 mb-4">Një interpretim modern i veprës së përjetshme të Shekspirit</p>
+                        
+                        <div class="flex items-center text-gray-500 mb-2">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>2 orë 30 minuta</span>
+                        </div>
+                        
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Salla Kryesore</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-6">
+                            <div>
+                                <span class="text-2xl font-bold text-gray-800">15€</span>
+                                <span class="text-gray-500 text-sm ml-1">/ person</span>
+                            </div>
+                            <button class="border px-6 py-2 rounded-full transition-colors font-medium">
+                                Rezervo
+                            </button>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="./single-post.html" class="show-item bg-white rounded-xl shadow-lg overflow-hidden show-card" data-date="neser" data-month="janar">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80" 
+                             alt="Përgjigja Jonë" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Nesër - 19:30
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Përgjigja Jonë</h3>
+                        <p class="text-gray-600 mb-4">Një dramë origjinale për sfidat e shoqërisë moderne</p>
+                        
+                        <div class="flex items-center text-gray-500 mb-2">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>1 orë 45 minuta</span>
+                        </div>
+                        
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Salla e Vogël</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-6">
+                            <div>
+                                <span class="text-2xl font-bold text-gray-800">12€</span>
+                                <span class="text-gray-500 text-sm ml-1">/ person</span>
+                            </div>
+                            <button class="border px-6 py-2 rounded-full transition-colors font-medium">
+                                Rezervo
+                            </button>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="./single-post.html" class="show-item bg-white rounded-xl shadow-lg overflow-hidden show-card" data-date="kete-jave" data-month="janar">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1776&q=80" 
+                             alt="E Diela e Fundit" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            E Shtunë - 21:00
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">E Diela e Fundit</h3>
+                        <p class="text-gray-600 mb-4">Komedi satirike për jetën në qytetin modern</p>
+                        
+                        <div class="flex items-center text-gray-500 mb-2">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>2 orë</span>
+                        </div>
+                        
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Salla Kryesore</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-6">
+                            <div>
+                                <span class="text-2xl font-bold text-gray-800">10€</span>
+                                <span class="text-gray-500 text-sm ml-1">/ person</span>
+                            </div>
+                            <button class="border px-6 py-2 rounded-full transition-colors font-medium">
+                                Rezervo
+                            </button>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="./single-post.html" class="show-item bg-white rounded-xl shadow-lg overflow-hidden show-card" data-date="kete-muaj" data-month="janar">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1772&q=80" 
+                             alt="Kthimi" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            25 Janar - 20:30
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Kthimi</h3>
+                        <p class="text-gray-600 mb-4">Dramë familjare me temë të kthimit në shtëpi</p>
+                        
+                        <div class="flex items-center text-gray-500 mb-2">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>2 orë 15 minuta</span>
+                        </div>
+                        
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Salla e Vogël</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-6">
+                            <div>
+                                <span class="text-2xl font-bold text-gray-800">14€</span>
+                                <span class="text-gray-500 text-sm ml-1">/ person</span>
+                            </div>
+                            <button class="border px-6 py-2 rounded-full transition-colors font-medium">
+                                Rezervo
+                            </button>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="./single-post.html" class="show-item bg-white rounded-xl shadow-lg overflow-hidden show-card" data-date="kete-muaj" data-month="shkurt">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" 
+                             alt="Rrëfimi i Natës" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            5 Shkurt - 19:00
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Rrëfimi i Natës</h3>
+                        <p class="text-gray-600 mb-4">Mister thriller psikologjik me elementë surreale</p>
+                        
+                        <div class="flex items-center text-gray-500 mb-2">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>1 orë 50 minuta</span>
+                        </div>
+                        
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Salla Kryesore</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-6">
+                            <div>
+                                <span class="text-2xl font-bold text-gray-800">16€</span>
+                                <span class="text-gray-500 text-sm ml-1">/ person</span>
+                            </div>
+                            <button class="border px-6 py-2 rounded-full transition-colors font-medium">
+                                Rezervo
+                            </button>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="./single-post.html" class="show-item bg-white rounded-xl shadow-lg overflow-hidden show-card" data-date="kete-jave" data-month="shkurt">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80" 
+                             alt="Fjala e Fundit" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            15 Shkurt - 18:30
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Fjala e Fundit</h3>
+                        <p class="text-gray-600 mb-4">Monolog emocionues për fuqinë e fjalëve dhe të kujtesës</p>
+                        
+                        <div class="flex items-center text-gray-500 mb-2">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>1 orë 30 minuta</span>
+                        </div>
+                        
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Salla Intime</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-6">
+                            <div>
+                                <span class="text-2xl font-bold text-gray-800">8€</span>
+                                <span class="text-gray-500 text-sm ml-1">/ person</span>
+                            </div>
+                            <button class="border px-6 py-2 rounded-full transition-colors font-medium">
+                                Rezervo
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            </div>
+
+            <div id="noResults" class="hidden text-center py-12">
+                <div class="max-w-md mx-auto">
+                    <svg class="w-24 h-24 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold text-gray-600 mb-2">Nuk u gjet asnjë shfaqje</h3>
+                    <p class="text-gray-500">Provoni të ndryshoni filtrat ose kërkimin tuaj</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-6 2xl:px-0 py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="flex flex-col items-start">
+            <div class="flex items-center space-x-3 mb-6">
+            <img src="./assets/logoteatri.png" alt="AAB Theater Logo" class="h-14 w-auto">
+            </div>
+            <p class="text-gray-300 text-sm">
+            Teatri AAB është një nga teatrot më të njohur në Kosovë, i dedikuar artit dhe kulturës.
+            </p>
+        </div>
+
+        <div class="text-gray-300 flex flex-col items-start">
+            <div class="mb-6">
+            <h3 class="font-semibold text-white text-lg mb-3 border-b border-red-600 pb-1 inline-block">Kontakt</h3>
+            <div class="mt-3 space-y-2">
+                <p class="flex items-start">
+                <svg class="w-5 h-5 mr-2 mt-0.5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                Rr. Elez Berisha, Nr.56 10000 Prishtinë
+                </p>
+                <p class="flex items-center">
+                <svg class="w-5 h-5 mr-2 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                +383 (0) 38 600 005
+                </p>
+                <p class="flex items-center">
+                <svg class="w-5 h-5 mr-2 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <a href="mailto:teatri@aab-edu.net" class="hover:text-red-400 transition">
+                    teatri@aab-edu.net
+                </a>
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <div class="text-gray-300">
+            <h3 class="font-semibold text-white text-lg mb-4 border-b border-red-600 pb-1 inline-block">Na Ndiqni</h3>
+            <p class="mb-4 text-sm">Qëndroni të përditësuar me aktivitetet tona të fundit nëpër rrjetet sociale.</p>
+            <div class="flex space-x-4">
+            <a href="https://www.facebook.com/aabteatri/" target="_blank" class="social-icon text-white hover:text-red-400" aria-label="Facebook">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.406.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.674V1.326C24 .592 23.406 0 22.675 0"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/teatriaabfarukbegolli/" target="_blank" class="social-icon text-white hover:text-red-400" aria-label="Instagram">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.783 2.225 7.149 2.163 8.415 2.105 8.795 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.334 3.678 1.315c-.98.98-1.187 2.092-1.245 3.373C2.012 5.668 2 6.077 2 12c0 5.923.012 6.332.07 7.612.058 1.281.265 2.393 1.245 3.373.98.98 2.092 1.187 3.373 1.245C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.281-.058 2.393-.265 3.373-1.245.98-.98 1.187-2.092 1.245-3.373.058-1.28.07-1.689.07-7.612 0-5.923-.012-6.332-.07-7.612-.058-1.281-.265-2.393-1.245-3.373-.98-.98-2.092-1.187-3.373-1.245C15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
+                </svg>
+            </a>
+            </div>
+        </div>
+        </div>
+        
+        <div class="border-t border-gray-700 py-6">
+        <div class="max-w-7xl mx-auto px-6 2xl:px-0 text-center text-gray-400 text-sm">
+            <p>© 2025 Teatri AAB. Të gjitha të drejtat e rezervuara.</p>
+        </div>
+        </div>
+    </footer>
+    <!-- END OF FOOTER -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const monthFilter = document.getElementById('monthFilter');
+      const searchInput = document.getElementById('searchInput');
+      const showItems = document.querySelectorAll('.show-item');
+      const noResults = document.getElementById('noResults');
+      
+      let activeDateFilter = 'all';
+      let activeMonthFilter = 'all';
+      let searchTerm = '';
+      
+      function filterShows() {
+        let visibleCount = 0;
+        
+        showItems.forEach(item => {
+          const showTitle = item.querySelector('h3').textContent.toLowerCase();
+          const showDescription = item.querySelector('p').textContent.toLowerCase();
+          const showDate = item.getAttribute('data-date');
+          const showMonth = item.getAttribute('data-month');
+          
+          const matchesSearch = searchTerm === '' || 
+            showTitle.includes(searchTerm) || 
+            showDescription.includes(searchTerm);
+          
+          const matchesDate = activeDateFilter === 'all' || 
+            showDate === activeDateFilter;
+          
+          const matchesMonth = activeMonthFilter === 'all' || 
+            showMonth === activeMonthFilter;
+          
+          if (matchesSearch && matchesDate && matchesMonth) {
+            item.classList.remove('hidden-show');
+            visibleCount++;
+          } else {
+            item.classList.add('hidden-show');
+          }
+        });
+        
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+      
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-red-600', 'text-white');
+            b.classList.add('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+          });
+          
+          this.classList.remove('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+          this.classList.add('bg-red-600', 'text-white');
+          
+          activeDateFilter = this.getAttribute('data-filter');
+          filterShows();
+        });
+      });
+      
+      monthFilter.addEventListener('change', function() {
+        activeMonthFilter = this.value;
+        filterShows();
+      });
+      
+      searchInput.addEventListener('input', function() {
+        searchTerm = this.value.toLowerCase();
+        filterShows();
+      });
+      
+      filterShows();
+    });
+  </script>
+
+</body>
+</html>

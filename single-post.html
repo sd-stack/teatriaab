@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamleti – Teatri AAB</title>
+  <link href="../src/output.css" rel="stylesheet">  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+    .font-italiana { font-family: 'Playfair Display', serif; }
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-overlay { 
+      background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-md text-red-600 flex items-center px-6 md:px-8 py-4 relative w-full">
+        
+        <a href="index.html" class="logo flex items-center space-x-2">
+        <img src="./assets/logoteatri.png" alt="Site Logo" class="w-24 h-auto block">
+        </a>
+
+        <div class="flex-1 flex justify-center">
+        <ul id="navLinks" class="hidden md:flex items-center gap-8">
+            <li><a href="./index.html" class="text-gray-700 hover:text-red-600 transition duration-300 font-medium">Home</a></li>
+            <li><a href="./rreth-nesh.html" class="text-gray-700 hover:text-red-600 transition duration-300 font-medium">Rreth nesh</a></li>
+            <li><a href="./shfaqjet.html" class="text-red-600 font-semibold border-b-2 border-red-600 pb-1">Shfaqjet</a></li>
+            <li><a href="./galeria.html" class="text-gray-700 hover:text-red-600 transition duration-300 font-medium">Galeria</a></li>
+            <li><a href="./lajmet.html" class="text-gray-700 hover:text-red-600 transition duration-300 font-medium">Lajmet</a></li>
+            <li><a href="./kontakt.html" class="text-gray-700 hover:text-red-600 transition duration-300 font-medium">Kontakt</a></li>
+        </ul>
+        </div>
+
+        <div class="flex items-center gap-4">
+        <button class="hidden md:inline bg-gradient-to-br from-red-600 to-red-500 text-white px-5 py-2.5 rounded-lg cursor-pointer font-medium shadow-md hover:from-red-700 hover:to-red-600 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
+            Rezervo
+        </button>
+
+        <div id="menuToggle" class="md:hidden text-red-600 text-2xl cursor-pointer">
+            ☰
+        </div>
+        </div>
+    </nav>
+
+    <div id="mobileMenu" class="hidden md:hidden flex-col bg-white shadow-lg absolute top-16 right-0 w-56 p-4 rounded-lg space-y-3 z-10">
+        <a href="./index.html" class="text-red-600 font-medium py-2">Home</a>
+        <a href="./rreth-nesh.html" class="text-gray-700 hover:text-red-600 py-2 transition">Rreth nesh</a>
+        <a href="./shfaqjet.html" class="text-gray-700 hover:text-red-600 py-2 transition">Shfaqjet</a>
+        <a href="./galeria.html" class="text-gray-700 hover:text-red-600 py-2 transition">Galeria</a>
+        <a href="./lajmet.html" class="text-gray-700 hover:text-red-600 py-2 transition">Lajmet</a>
+        <a href="./kontakt.html" class="text-gray-700 hover:text-red-600 py-2 transition">Kontakt</a>
+        <button class="bg-gradient-to-br from-red-600 to-red-500 text-white px-5 py-2.5 rounded-lg cursor-pointer font-medium shadow-md hover:from-red-700 hover:to-red-600 transition-all duration-300 mt-2 w-full">
+        Rezervo
+        </button>
+    </div>
+    <!-- END OF NAVBAR  -->
+
+    <section class="relative h-[70vh] min-h-[600px] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1546484475-7f7bd55792da?auto=format&fit=crop&w=1800&q=80"
+            alt="Hamleti - Shfaqja kryesore"
+            class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 gradient-overlay"></div>
+        
+        <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
+        <div class="max-w-6xl 2xl:max-w-7xl mx-auto">
+            <div class="bg-black/40 backdrop-blur-sm rounded-2xl p-8 max-w-2xl">
+            <h1 class="text-5xl md:text-6xl font-bold font-italiana mb-4">Hamleti</h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-6 leading-relaxed">
+                Një interpretim modern i veprës së përjetshme të Shekspirit
+            </p>
+            <div class="flex flex-wrap gap-4 items-center">
+                <span class="bg-red-600 px-4 py-2 rounded-full font-semibold">Sot - 20:00</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full">Salla Kryesore</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full">2 orë 30 min</span>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6">
+        <div class="grid lg:grid-cols-3 gap-12">
+        
+        <div class="lg:col-span-2 space-y-12">
+            
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-3xl font-bold font-italiana mb-6 text-gray-900">Rreth Shfaqjes</h2>
+            <div class="prose prose-lg text-gray-600 leading-relaxed">
+                <p class="mb-4">
+                "Hamleti" sjell në skenë një interpretim të freskët dhe modern të veprës së përjetshme të William Shakespeare. 
+                Në regjinë e Arben Mehmetit, kjo produksion i ri shqiptar sjell dilemma ekzistenciale, hakmarrje, dashuri dhe çmenduri 
+                në një formë të re për publikun modern.
+                </p>
+                <p class="mb-4">
+                Duke mbajtur thelbin e veprës origjinale, ky version modern eksploron temat e përhershme të pushtetit, besnikërisë 
+                dhe kërkimit të së vërtetës në një botë të përçarë.
+                </p>
+            </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-3xl font-bold font-italiana mb-6 text-gray-900">Detajet e Shfaqjes</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                    <span class="text-red-600 font-bold">⏱</span>
+                    </div>
+                    <div>
+                    <h3 class="font-semibold text-gray-900">Kohëzgjatja</h3>
+                    <p class="text-gray-600">2 orë 30 minuta</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                    <span class="text-red-600 font-bold">📅</span>
+                    </div>
+                    <div>
+                    <h3 class="font-semibold text-gray-900">Data</h3>
+                    <p class="text-gray-600">4 Tetor 2025</p>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                    <span class="text-red-600 font-bold">📍</span>
+                    </div>
+                    <div>
+                    <h3 class="font-semibold text-gray-900">Vendndodhja</h3>
+                    <p class="text-gray-600">Salla Kryesore</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                    <span class="text-red-600 font-bold">👥</span>
+                    </div>
+                    <div>
+                    <h3 class="font-semibold text-gray-900">Regjia</h3>
+                    <p class="text-gray-600">Arben Mehmeti</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-3xl font-bold font-italiana mb-6 text-gray-900">Galeria</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" 
+                    alt="Hamleti në skenë" 
+                    class="rounded-xl shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer aspect-[4/3] object-cover">
+                <img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?auto=format&fit=crop&w=600&q=80" 
+                    alt="Aktorët kryesorë" 
+                    class="rounded-xl shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer aspect-[4/3] object-cover">
+                <img src="https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?auto=format&fit=crop&w=600&q=80" 
+                    alt="Skena dramatik" 
+                    class="rounded-xl shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer aspect-[4/3] object-cover">
+                <img src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&w=600&q=80" 
+                    alt="Performancë emocionale" 
+                    class="rounded-xl shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer aspect-[4/3] object-cover">
+            </div>  
+            </div>
+        </div>
+
+        <div class="lg:col-span-1">
+            <div class="bg-white rounded-2xl shadow-xl p-8 sticky top-32">
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold font-italiana text-gray-900 mb-2">Rezervo Biletën</h3>
+                <div class="text-3xl font-bold text-red-600">15€ <span class="text-lg text-gray-500 font-normal">/ person</span></div>
+            </div>
+
+            <form class="space-y-6">
+                <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Emri dhe Mbiemri</label>
+                <input type="text" required 
+                        class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all duration-200">
+                </div>
+
+                <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                <input type="email" required 
+                        class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all duration-200">
+                </div>
+
+                <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Numri i Telefonit</label>
+                <input type="tel" required 
+                        class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all duration-200">
+                </div>
+
+                <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Numri i Biletave</label>
+                <select class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all duration-200">
+                    <option>1 biletë</option>
+                    <option>2 bileta</option>
+                    <option>3 bileta</option>
+                    <option>4 bileta</option>
+                    <option>5 bileta</option>
+                    <option>6+ bileta</option>
+                </select>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-4">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-gray-600">Bileta standarde</span>
+                    <span class="font-semibold">15€</span>
+                </div>
+                <div class="flex justify-between items-center text-lg font-bold">
+                    <span>Totali</span>
+                    <span class="text-red-600">15€</span>
+                </div>
+                </div>
+
+                <button type="submit" 
+                        class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Rezervo Tani
+                </button>
+
+                <p class="text-xs text-gray-500 text-center mt-4">
+                Duke klikuar "Rezervo Tani", ju pranoni 
+                <a href="#" class="text-red-600 hover:underline">kushtet tona</a>
+                </p>
+            </form>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-6 2xl:px-0 py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="flex flex-col items-start">
+            <div class="flex items-center space-x-3 mb-6">
+            <img src="./assets/logoteatri.png" alt="AAB Theater Logo" class="h-14 w-auto">
+            </div>
+            <p class="text-gray-300 text-sm">
+            Teatri AAB është një nga teatrot më të njohur në Kosovë, i dedikuar artit dhe kulturës.
+            </p>
+        </div>
+
+        <div class="text-gray-300 flex flex-col items-start">
+            <div class="mb-6">
+            <h3 class="font-semibold text-white text-lg mb-3 border-b border-red-600 pb-1 inline-block">Kontakt</h3>
+            <div class="mt-3 space-y-2">
+                <p class="flex items-start">
+                <svg class="w-5 h-5 mr-2 mt-0.5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                Rr. Elez Berisha, Nr.56 10000 Prishtinë
+                </p>
+                <p class="flex items-center">
+                <svg class="w-5 h-5 mr-2 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                +383 (0) 38 600 005
+                </p>
+                <p class="flex items-center">
+                <svg class="w-5 h-5 mr-2 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <a href="mailto:teatri@aab-edu.net" class="hover:text-red-400 transition">
+                    teatri@aab-edu.net
+                </a>
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <div class="text-gray-300">
+            <h3 class="font-semibold text-white text-lg mb-4 border-b border-red-600 pb-1 inline-block">Na Ndiqni</h3>
+            <p class="mb-4 text-sm">Qëndroni të përditësuar me aktivitetet tona të fundit nëpër rrjetet sociale.</p>
+            <div class="flex space-x-4">
+            <a href="https://www.facebook.com/aabteatri/" target="_blank" class="social-icon text-white hover:text-red-400" aria-label="Facebook">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.406.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.674V1.326C24 .592 23.406 0 22.675 0"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/teatriaabfarukbegolli/" target="_blank" class="social-icon text-white hover:text-red-400" aria-label="Instagram">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.783 2.225 7.149 2.163 8.415 2.105 8.795 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.334 3.678 1.315c-.98.98-1.187 2.092-1.245 3.373C2.012 5.668 2 6.077 2 12c0 5.923.012 6.332.07 7.612.058 1.281.265 2.393 1.245 3.373.98.98 2.092 1.187 3.373 1.245C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.281-.058 2.393-.265 3.373-1.245.98-.98 1.187-2.092 1.245-3.373.058-1.28.07-1.689.07-7.612 0-5.923-.012-6.332-.07-7.612-.058-1.281-.265-2.393-1.245-3.373-.98-.98-2.092-1.187-3.373-1.245C15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
+                </svg>
+            </a>
+            </div>
+        </div>
+        </div>
+        
+        <div class="border-t border-gray-700 py-6">
+        <div class="max-w-7xl mx-auto px-6 2xl:px-0 text-center text-gray-400 text-sm">
+            <p>© 2025 Teatri AAB. Të gjitha të drejtat e rezervuara.</p>
+        </div>
+        </div>
+    </footer>
+    <!-- END OF FOOTER -->
+
+</body>
+</html>
