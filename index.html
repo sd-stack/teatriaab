@@ -12,12 +12,10 @@
 <body class="m-0 bg-white">
 
   <!-- NAVBAR -->
-  <nav class="bg-white shadow-md text-red-600 flex items-center px-6 md:px-8 py-4 relative w-full">
-    
+  <nav class="bg-white shadow-md text-red-600 flex items-center px-6 md:px-8 py-4 relative w-full z-50">
     <a href="index.html" class="logo flex items-center space-x-2">
       <img src="./assets/logoteatri.png" alt="Site Logo" class="w-24 h-auto block">
     </a>
-
     <div class="flex-1 flex justify-center">
       <ul id="navLinks" class="hidden md:flex items-center gap-8">
         <li><a href="./index.html" class="text-red-600 font-semibold border-b-2 border-red-600 pb-1">Home</a></li>
@@ -28,29 +26,26 @@
         <li><a href="./kontakt.html" class="text-gray-700 hover:text-red-600 transition duration-300 font-medium">Kontakt</a></li>
       </ul>
     </div>
-
     <div class="flex items-center gap-4">
       <button class="hidden md:inline bg-gradient-to-br from-red-600 to-red-500 text-white px-5 py-2.5 rounded-lg cursor-pointer font-medium shadow-md hover:from-red-700 hover:to-red-600 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
         Rezervo
       </button>
-
       <div id="menuToggle" class="md:hidden text-red-600 text-2xl cursor-pointer">
         ☰
       </div>
     </div>
+  <div id="mobileMenu" class="hidden md:hidden flex-col bg-white shadow-lg absolute top-16 right-0 w-56 p-4 rounded-lg space-y-3 z-50">
+      <a href="./index.html" class="text-red-600 font-medium py-2">Home</a>
+      <a href="./rreth-nesh.html" class="text-gray-700 hover:text-red-600 py-2 transition">Rreth nesh</a>
+      <a href="./shfaqjet.html" class="text-gray-700 hover:text-red-600 py-2 transition">Shfaqjet</a>
+      <a href="./galeria.html" class="text-gray-700 hover:text-red-600 py-2 transition">Galeria</a>
+      <a href="./lajmet.html" class="text-gray-700 hover:text-red-600 py-2 transition">Lajmet</a>
+      <a href="./kontakt.html" class="text-gray-700 hover:text-red-600 py-2 transition">Kontakt</a>
+      <button class="bg-gradient-to-br from-red-600 to-red-500 text-white px-5 py-2.5 rounded-lg cursor-pointer font-medium shadow-md hover:from-red-700 hover:to-red-600 transition-all duration-300 mt-2 w-full">
+        Rezervo
+      </button>
+    </div>
   </nav>
-
-  <div id="mobileMenu" class="hidden md:hidden flex-col bg-white shadow-lg absolute top-16 right-0 w-56 p-4 rounded-lg space-y-3 z-10">
-    <a href="./index.html" class="text-red-600 font-medium py-2">Home</a>
-    <a href="./rreth-nesh.html" class="text-gray-700 hover:text-red-600 py-2 transition">Rreth nesh</a>
-    <a href="./shfaqjet.html" class="text-gray-700 hover:text-red-600 py-2 transition">Shfaqjet</a>
-    <a href="./galeria.html" class="text-gray-700 hover:text-red-600 py-2 transition">Galeria</a>
-    <a href="./lajmet.html" class="text-gray-700 hover:text-red-600 py-2 transition">Lajmet</a>
-    <a href="./kontakt.html" class="text-gray-700 hover:text-red-600 py-2 transition">Kontakt</a>
-    <button class="bg-gradient-to-br from-red-600 to-red-500 text-white px-5 py-2.5 rounded-lg cursor-pointer font-medium shadow-md hover:from-red-700 hover:to-red-600 transition-all duration-300 mt-2 w-full">
-      Rezervo
-    </button>
-  </div>
   <!-- END OF NAVBAR  -->
 
 
@@ -61,7 +56,7 @@
       <div class="absolute inset-0 bg-black/50"></div>
     </div>
     
-    <div class="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32">
+  <div class="relative z-20 max-w-7xl mx-auto px-6 py-24 md:py-32">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="text-center lg:text-left">
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
@@ -350,27 +345,37 @@
 
 
   
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileMenu = document.getElementById("mobileMenu");
+<script>
+  // Mobile menu logic (single declaration, no redeclaration errors)
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
 
+  if (menuToggle && mobileMenu) {
     menuToggle.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
       mobileMenu.classList.toggle("flex");
     });
-    
+
     // Close mobile menu when clicking outside
     document.addEventListener('click', (event) => {
       const isClickInsideNav = event.target.closest('nav');
       const isClickInsideMenu = event.target.closest('#mobileMenu');
-      
       if (!isClickInsideNav && !isClickInsideMenu && !mobileMenu.classList.contains('hidden')) {
         mobileMenu.classList.add('hidden');
         mobileMenu.classList.remove('flex');
       }
     });
-  </script>
+    // Close menu when clicking a link inside it
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+      });
+    });
 
+  } // end if (menuToggle && mobileMenu)
+  </script>
 
 </body>
 </html>

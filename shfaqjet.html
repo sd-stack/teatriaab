@@ -20,7 +20,7 @@
 <body class="bg-gray-50">
 
     <!-- NAVBAR -->
-    <nav class="bg-white shadow-md text-red-600 flex items-center px-6 md:px-8 py-4 relative w-full">
+    <nav class="bg-white shadow-md text-red-600 flex items-center px-6 md:px-8 py-4 relative w-full z-50">
         
         <a href="index.html" class="logo flex items-center space-x-2">
         <img src="./assets/logoteatri.png" alt="Site Logo" class="w-24 h-auto block">
@@ -48,7 +48,7 @@
         </div>
     </nav>
 
-    <div id="mobileMenu" class="hidden md:hidden flex-col bg-white shadow-lg absolute top-16 right-0 w-56 p-4 rounded-lg space-y-3 z-10">
+    <div id="mobileMenu" class="hidden md:hidden flex-col bg-white shadow-lg absolute top-16 right-0 w-56 p-4 rounded-lg space-y-3 z-50">
         <a href="./index.html" class="text-gray-700 hover:text-red-600 py-2 transition">Home</a>
         <a href="./rreth-nesh.html" class="text-red-600 font-medium py-2">Rreth nesh</a>
         <a href="./shfaqjet.html" class="text-gray-700 hover:text-red-600 py-2 transition">Shfaqjet</a>
@@ -61,7 +61,7 @@
     </div>
     <!-- END OF NAVBAR  -->
 
-    <section class="hero-gradient text-white py-20 text-center">
+    <section class="hero-gradient text-white py-20 text-center relative z-20">
         <h1 class="font-italiana text-5xl font-bold mb-4">Shfaqjet Tona</h1>
         <p class="text-xl text-gray-300">Eksploroni programin tonë për sezonin aktual</p>
     </section>
@@ -430,8 +430,37 @@
         </div>
     </footer>
     <!-- END OF FOOTER -->
+    <script>
+    // Mobile menu logic (copied from index.html)
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-  <script>
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+            mobileMenu.classList.toggle("flex");
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            const isClickInsideNav = event.target.closest('nav');
+            const isClickInsideMenu = event.target.closest('#mobileMenu');
+            if (!isClickInsideNav && !isClickInsideMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            }
+        });
+        // Close menu when clicking a link inside it
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
       const filterBtns = document.querySelectorAll('.filter-btn');
       const monthFilter = document.getElementById('monthFilter');
@@ -505,6 +534,38 @@
       filterShows();
     });
   </script>
+    <script>
+        // Set active nav link based on current pathname (desktop and mobile)
+        (function() {
+            const path = window.location.pathname.split('/').pop() || 'index.html';
+
+            const desktopLinks = document.querySelectorAll('#navLinks a');
+            const mobileLinks = document.querySelectorAll('#mobileMenu a');
+
+            function setDesktopActive(links) {
+                links.forEach(a => {
+                    a.classList.remove('text-red-600','font-semibold','border-b-2','border-red-600','pb-1');
+                    const href = a.getAttribute('href')?.split('/').pop();
+                    if (href === path) {
+                        a.classList.add('text-red-600','font-semibold','border-b-2','border-red-600','pb-1');
+                    }
+                });
+            }
+
+            function setMobileActive(links) {
+                links.forEach(a => {
+                    a.classList.remove('text-red-600','font-medium');
+                    const href = a.getAttribute('href')?.split('/').pop();
+                    if (href === path) {
+                        a.classList.add('text-red-600','font-medium');
+                    }
+                });
+            }
+
+            setDesktopActive(desktopLinks);
+            setMobileActive(mobileLinks);
+        })();
+    </script>
 
 </body>
 </html>
