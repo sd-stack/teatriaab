@@ -30,9 +30,9 @@
     </div>
 
     <div class="flex items-center gap-4">
-      <button class="hidden md:inline bg-gradient-to-br from-red-600 to-red-500 text-white px-5 py-2.5 rounded-lg cursor-pointer font-medium shadow-md hover:from-red-700 hover:to-red-600 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
+      <a href="https://rezervo.teatriaab.com/" class="hidden md:inline bg-gradient-to-br from-red-600 to-red-500 text-white px-5 py-2.5 rounded-lg cursor-pointer font-medium shadow-md hover:from-red-700 hover:to-red-600 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
         Rezervo
-      </button>
+      </a>
 
       <div id="menuToggle" class="md:hidden text-red-600 text-2xl cursor-pointer">
         ☰
@@ -182,50 +182,54 @@
       <h2 class="text-3xl md:text-4xl font-bold mb-8">Anëtarët e Ekipit</h2>
 
       <div class="relative">
+        <!-- Prev/Next buttons (desktop only) -->
         <button id="prevBtn" 
-          class="absolute -left-10 md:-left-12 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 md:p-4 rounded-full hover:bg-black shadow-lg transition">
+          class="hidden lg:block absolute -left-10 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black shadow-lg transition">
           &#10094;
         </button>
 
-        <div class="overflow-hidden">
-          <div id="carousel" class="flex transition-transform duration-500">
-            <div class="min-w-[33.33%] p-4">
+        <div class="overflow-x-auto lg:overflow-hidden">
+          <div id="carousel" class="flex gap-4 lg:gap-0 transition-transform duration-500">
+            <!-- Member 1 -->
+            <div class="flex-shrink-0 w-80 lg:min-w-[33.33%] p-4">
               <div class="bg-white shadow-lg rounded-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-xl">
                 <img src="./assets/staf1.jpg" alt="Antari 1" 
-                    class="w-36 md:w-40 h-36 md:h-40 mx-auto rounded-full object-cover mb-4">
+                    class="w-32 md:w-40 h-32 md:h-40 mx-auto rounded-full object-cover mb-4">
                 <h3 class="text-lg md:text-xl font-semibold" style="font-family: 'Inter', sans-serif;">Anne Smith</h3>
               </div>
             </div>
 
-            <div class="min-w-[33.33%] p-4">
+            <!-- Member 2 -->
+            <div class="flex-shrink-0 w-80 lg:min-w-[33.33%] p-4">
               <div class="bg-white shadow-lg rounded-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-xl">
                 <img src="./assets/staf1.jpg" alt="Antari 2" 
-                    class="w-36 md:w-40 h-36 md:h-40 mx-auto rounded-full object-cover mb-4">
+                    class="w-32 md:w-40 h-32 md:h-40 mx-auto rounded-full object-cover mb-4">
                 <h3 class="text-lg md:text-xl font-semibold" style="font-family: 'Inter', sans-serif;">Michael Johnson</h3>
               </div>
             </div>
 
-            <div class="min-w-[33.33%] p-4">
+            <!-- Member 3 -->
+            <div class="flex-shrink-0 w-80 lg:min-w-[33.33%] p-4">
               <div class="bg-white shadow-lg rounded-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-xl">
                 <img src="./assets/staf1.jpg" alt="Antari 3" 
-                    class="w-36 md:w-40 h-36 md:h-40 mx-auto rounded-full object-cover mb-4">
+                    class="w-32 md:w-40 h-32 md:h-40 mx-auto rounded-full object-cover mb-4">
                 <h3 class="text-lg md:text-xl font-semibold" style="font-family: 'Inter', sans-serif;">Sofia Martinez</h3>
               </div>
             </div>
 
-            <div class="min-w-[33.33%] p-4">
+            <!-- Member 4 -->
+            <div class="flex-shrink-0 w-80 lg:min-w-[33.33%] p-4">
               <div class="bg-white shadow-lg rounded-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-xl">
                 <img src="./assets/staf1.jpg" alt="Antari 4" 
-                    class="w-36 md:w-40 h-36 md:h-40 mx-auto rounded-full object-cover mb-4">
+                    class="w-32 md:w-40 h-32 md:h-40 mx-auto rounded-full object-cover mb-4">
                 <h3 class="text-lg md:text-xl font-semibold" style="font-family: 'Inter', sans-serif;">John Doe</h3>
               </div>
             </div>
-
           </div>
         </div>
 
         <button id="nextBtn" 
-          class="absolute -right-10 md:-right-12 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 md:p-4 rounded-full hover:bg-black shadow-lg transition">
+          class="hidden lg:block absolute -right-10 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black shadow-lg transition">
           &#10095;
         </button>
       </div>
@@ -353,19 +357,38 @@
 
     let index = 0;
 
+    function getVisibleCards() {
+      if (window.innerWidth < 1024) return 1;  // Mobile/tablet scroll x
+      return 3;                               // Desktop
+    }
+
+    function updateCarousel() {
+      if(window.innerWidth >= 1024){
+        const visible = getVisibleCards();
+        const maxIndex = carousel.children.length - visible;
+        if (index > maxIndex) index = maxIndex;
+        carousel.style.transform = `translateX(-${index * (100 / visible)}%)`;
+      } else {
+        carousel.style.transform = `translateX(0)`; // scroll x native
+      }
+    }
+
     nextBtn.addEventListener('click', () => {
-      if (index < carousel.children.length - 3) { 
+      const visible = getVisibleCards();
+      if (index < carousel.children.length - visible) {
         index++;
-        carousel.style.transform = `translateX(-${index * 33.33}%)`;
+        updateCarousel();
       }
     });
 
     prevBtn.addEventListener('click', () => {
       if (index > 0) {
         index--;
-        carousel.style.transform = `translateX(-${index * 33.33}%)`;
+        updateCarousel();
       }
     });
+
+    window.addEventListener('resize', updateCarousel);
   </script>
 
 </body>
