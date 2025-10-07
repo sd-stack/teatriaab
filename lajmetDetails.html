@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lajmet - Teatri AAB</title>
+  <link href="../src/output.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .title-font { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- NAVBAR -->
+  <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 py-3">
+      <a href="./index.html">
+        <img src="./assets/logoteatri.png" alt="Teatri AAB" class="w-24">
+      </a>
+      <ul class="hidden md:flex gap-6 text-sm font-medium">
+        <li><a href="./index.html" class="hover:text-red-600">Home</a></li>
+        <li><a href="./rreth-nesh.html" class="hover:text-red-600">Rreth nesh</a></li>
+        <li><a href="./shfaqjet.html" class="hover:text-red-600">Shfaqjet</a></li>
+        <li><a href="./galeria.html" class="hover:text-red-600">Galeria</a></li>
+        <li><a href="./lajmet.html" class="text-red-600 font-semibold border-b-2 border-red-600 pb-1">Lajmet</a></li>
+        <li><a href="./kontakt.html" class="hover:text-red-600">Kontakt</a></li>
+      </ul>
+      <button class="hidden md:block bg-red-600 text-white px-5 py-2 rounded-lg hover:bg-red-700 transition">
+        Rezervo
+      </button>
+      <button id="menuToggle" class="md:hidden text-2xl text-red-600">☰</button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden flex-col bg-white border-t border-gray-100 shadow-md p-4 space-y-2">
+      <a href="./index.html" class="py-2">Home</a>
+      <a href="./rreth-nesh.html" class="py-2">Rreth nesh</a>
+      <a href="./shfaqjet.html" class="py-2">Shfaqjet</a>
+      <a href="./galeria.html" class="py-2">Galeria</a>
+      <a href="./lajmet.html" class="text-red-600 font-semibold py-2">Lajmet</a>
+      <a href="./kontakt.html" class="py-2">Kontakt</a>
+      <button class="bg-red-600 text-white px-5 py-2 rounded-lg w-full hover:bg-red-700 transition">
+        Rezervo
+      </button>
+    </div>
+  </nav>
+
+  <!-- LAJMI -->
+  <main class="max-w-7xl mx-auto px-4 py-10">
+    <a href="./lajmet.html" class="flex items-center text-red-600 mb-4 text-sm hover:underline">
+      ← Kthehu te Lajmet
+    </a>
+
+    <header class="bg-white rounded-lg border border-gray-200 p-6 mb-6">
+    <span class="text-red-600 bg-red-50 px-3 py-1 rounded-full text-sm">Premiera</span>
+    <h1 class="title-font text-3xl md:text-4xl font-semibold mt-3 leading-tight text-gray-900">
+        “Hamleti” sjell revolucionin në skenën shqiptare me premierë të mbushur
+    </h1>
+    <p class="text-sm mt-3 text-gray-500">15 Janar 2024 • Teatri AAB</p>
+    </header>
+
+
+    <article class="bg-white rounded-lg shadow-sm p-6">
+      <img src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&w=800&q=80"
+           alt="Premiera e Hamletit"
+           class="rounded-lg mb-6 w-full">
+
+      <p class="text-lg mb-4 leading-relaxed">
+        Në një natë të mbushur me emocione, Teatri AAB prezantoi premierën e shfaqjes “Hamleti” nën regjinë e Arben Mehmetit.
+        Salla ishte plot me publik entuziast që duartrokiti gjatë gjithë performancës.
+      </p>
+
+      <p class="mb-4">
+        Regjisori ka theksuar se synimi ishte të sjellë një dimension të ri, modern, por të respektueshëm ndaj tekstit origjinal të Shakespeare.
+      </p>
+
+      <h2 class="font-semibold text-xl mt-6 mb-3">Performanca e aktorëve</h2>
+      <p class="mb-4">
+        Rolin e Hamletit e interpretoi Dritan Begu, me një lojë të fuqishme dhe emocionale që pushtoi skenën.
+      </p>
+
+      <h2 class="font-semibold text-xl mt-6 mb-3">Datat & çmimet</h2>
+      <ul class="list-disc pl-5 mb-6 text-gray-700">
+        <li>Çdo të enjte, të premte dhe të shtunë</li>
+        <li>Ora 20:00 – Salla Kryesore</li>
+        <li>Çmimi: 10€ - 25€</li>
+      </ul>
+
+      <a href="https://rezervo.teatriaab.com/" class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition">
+        Rezervo Biletë
+      </a>
+    </article>
+
+
+    <!-- Lajme të ngjashme -->
+<section class="mt-12">
+  <h2 class="font-semibold text-2xl mb-5">Lajme të ngjashme</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Lajmi 1 -->
+    <a href="#" class="block rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition bg-white">
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80" 
+           alt="Lajmi 1" 
+           class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="font-semibold text-gray-900 text-base leading-snug mb-2">
+          Audicionet për sezonin e ri në Teatrin AAB
+        </h3>
+        <p class="text-gray-500 text-sm">15 Janar 2024</p>
+      </div>
+    </a>
+
+    <!-- Lajmi 2 -->
+    <a href="#" class="block rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition bg-white">
+      <img src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&w=800&q=80" 
+           alt="Lajmi 2" 
+           class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="font-semibold text-gray-900 text-base leading-snug mb-2">
+          Takim me aktorët e rinj të trupës së teatrit      
+        </h3>
+        <p class="text-gray-500 text-sm">22 Janar 2024</p>
+      </div>
+    </a>
+
+    <!-- Lajmi 3 -->
+    <a href="#" class="block rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition bg-white">
+      <img src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&w=800&q=80" 
+           alt="Lajmi 3" 
+           class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="font-semibold text-gray-900 text-base leading-snug mb-2">
+          “Monologu i fundit” rikthehet në skenë këtë muaj
+        </h3>
+        <p class="text-gray-500 text-sm">5 Shkurt 2024</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-300 mt-16">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8 text-sm">
+      <div>
+        <img src="./assets/logoteatri.png" alt="Teatri AAB" class="h-14 mb-4">
+        <p>Teatri AAB është një nga teatrot më të njohur në Kosovë, i dedikuar artit dhe kulturës.</p>
+      </div>
+
+      <div>
+        <h3 class="text-white font-semibold mb-3">Kontakt</h3>
+        <p>Rr. Elez Berisha, Nr.56, Prishtinë</p>
+        <p>+383 (0) 38 600 005</p>
+        <a href="mailto:teatri@aab-edu.net" class="text-red-400 hover:underline">teatri@aab-edu.net</a>
+      </div>
+
+      <div>
+        <h3 class="text-white font-semibold mb-3">Na ndiqni</h3>
+        <div class="flex space-x-4">
+          <a href="https://www.facebook.com/aabteatri/" target="_blank" class="hover:text-red-400">Facebook</a>
+          <a href="https://www.instagram.com/teatriaabfarukbegolli/" target="_blank" class="hover:text-red-400">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 text-center py-4 text-gray-500 text-xs">
+      © 2025 Teatri AAB. Të gjitha të drejtat e rezervuara.
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
+</body>
+</html>
